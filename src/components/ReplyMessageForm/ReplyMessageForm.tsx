@@ -1,12 +1,10 @@
 import React, { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react'
 import { Input,Button } from 'antd';
 import styles  from './ReplyMessageForm.module.css'
-import { onAuthStateChanged, User } from 'firebase/auth';
-import { auth } from '../../../firebase';
-import avatarIcon from './avatar.png'
+import avatarIcon from '../../assets/img/avatar.png'
 import Image from 'next/image';
 import { db } from '../../../firebase'
-import {  child, onValue, push, ref, set, update } from "firebase/database";
+import {  ref,  update } from "firebase/database";
 import { nanoid } from 'nanoid';
 import { ContextType, IData } from '@/type';
 import { motion } from 'framer-motion';
@@ -84,7 +82,7 @@ const ReplyMessageForm = (item: IData) => {
       autoSize={{ minRows: 3, maxRows: 5 }}
       />
       <Button type="primary" size='large' onClick={completeHandler}>
-          Edit
+        Reply
       </Button>
     </motion.div>
   )

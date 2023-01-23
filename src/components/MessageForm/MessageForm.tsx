@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useContext, useEffect, useState } from
 import { Input,Button } from 'antd';
 import styles  from './MessageForm.module.css'
 import { auth } from '../../../firebase';
-import avatarIcon from './avatar.png'
+import avatarIcon from '../../assets/img/avatar.png'
 import Image from 'next/image';
 import { db } from '../../../firebase'
 import {  onValue, ref, set } from "firebase/database";
@@ -77,7 +77,7 @@ const MessageForm = ({setData,data}: IMessageFormProps) => {
         />
        <div className={styles.buttonWrapper}>
        <Button type="primary" size='large' onClick={writeUserData}>
-            Send
+          Send
         </Button>
         <Button type="primary" size='small' onClick={logout}>
            {!loading? "Log Out" : "Loading"}

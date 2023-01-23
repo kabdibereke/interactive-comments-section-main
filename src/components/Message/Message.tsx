@@ -8,8 +8,8 @@ import { auth, db } from '../../../firebase'
 import { ref, remove, update } from 'firebase/database';
 import { ContextType, IData } from '@/type';
 import { motion } from 'framer-motion';
-import deleteIcon from './Delete.png';
-import editIcon from './Edit.png';
+import deleteIcon from '../../assets/img/delete.png';
+import editIcon from '../../assets/img/edit.png';
 import { Button, Input } from 'antd';
 import  { AuthContextP } from '@/context/AuthContext'
 const { TextArea } = Input;
