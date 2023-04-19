@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React, { useContext, useEffect, useState } from 'react'
 import styles from './Message.module.css'
-import replyIcon from './reply.png'
-import avatarICon from '../MessageForm/avatar.png'
+import replyIcon from '../../assets/img/reply.png'
+import avatarICon from '../../assets/img/avatar.png'
 import ReplyMessageForm from '../ReplyMessageForm/ReplyMessageForm'
 import { auth, db } from '../../../firebase'
 import { ref, remove, update } from 'firebase/database';
