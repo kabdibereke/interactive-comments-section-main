@@ -18,7 +18,7 @@ const ReplyMessageForm = (item: IData) => {
   const [openForm, setOpenForm] = useState(false)
   const completeHandler = () => {
     setOpenForm(false)
-    const newId = nanoid()
+    const newId = new Date().getTime()
     // const replies = push(child(ref(db), `${newId}`)).key;
 		update(ref(db, `/${item.id}`+ `${newId}`), {
       id:item.id + newId,

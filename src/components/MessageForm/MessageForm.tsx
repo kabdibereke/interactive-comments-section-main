@@ -46,7 +46,7 @@ const MessageForm = ({setData,data}: IMessageFormProps) => {
   },[])
 
   function writeUserData() {
-    const id =nanoid()
+    const id =new Date().getTime()
     set(ref(db,  `${id}`), {
       id:id,
       message: value,
