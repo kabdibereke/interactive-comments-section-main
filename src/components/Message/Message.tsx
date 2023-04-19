@@ -78,7 +78,7 @@ const Message = (item: IData) => {
      initial={{ opacity: 0, scale: 0.5 }}
      animate={{ opacity: 1, scale: 1 }}
      transition={{ duration: 0.2 }}
-    className={ item.id.length == 21? styles.wrapper  : styles.wrapperMin   }>
+    className={ item.id.length > 15? styles.wrapperMin    : styles.wrapper   }>
         <div className={styles.count} >
             <button onClick={countPlus}>+</button>
             <span>{item.count}</span>
@@ -122,7 +122,7 @@ const Message = (item: IData) => {
             </Button>}
         </div>
     </motion.div>
-     {openForm &&   <ReplyMessageForm {...item}/>}
+     {openForm &&   <ReplyMessageForm item={item} setOpenFormParent={setOpenForm} />}
     </>
   )
 }

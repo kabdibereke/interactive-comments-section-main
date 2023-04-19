@@ -11,8 +11,11 @@ import { motion } from 'framer-motion';
 import { AuthContextP } from '@/context/AuthContext';
 const { TextArea } = Input;
 
-
-const ReplyMessageForm = (item: IData) => {
+type Props = {
+  item:IData,
+  setOpenFormParent:React.Dispatch<SetStateAction<boolean>>
+}
+const ReplyMessageForm = ({item,setOpenFormParent}: Props) => {
   const {user}  = useContext(AuthContextP)  as ContextType
   const [value, setValue] = useState(`@${item.user},  `);
   const [openForm, setOpenForm] = useState(false)
@@ -21,7 +24,7 @@ const ReplyMessageForm = (item: IData) => {
     const newId = new Date().getTime()
     // const replies = push(child(ref(db), `${newId}`)).key;
 		update(ref(db, `/${item.id}`+ `${newId}`), {
-      id:item.id + newId,
+      id:item.id +''+ newId,
       count:0,
       message:value,
       user:user?.displayName,
@@ -29,6 +32,7 @@ const ReplyMessageForm = (item: IData) => {
       date: new Date().getTime(),
 
 		});
+    setOpenFormParent(false)
 	};
 
   // const getData = async ()=> {
